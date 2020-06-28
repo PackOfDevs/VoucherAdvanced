@@ -11,7 +11,7 @@
 </div>
 
  - <h3>Download:</h3>
- 1. Download latest [release](https://github.com/MFDGaming/PocketMine-Steadfast3/releases) or sucess build.
+ 1. Download latest [release](https://github.com/PackOfDevs/VoucherAdvanced/releases) or sucess build.
  2. Make shore you have installed the [EconomyAPI](https://poggit.pmmp.io/p/EconomyAPI/5.7.2) plugin.
  3. Upload/copy it to your plugins folder.
  4. Start your server and you are all set.

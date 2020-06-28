@@ -23,6 +23,11 @@ class GenerateCodeCommand extends PluginCommand {
 			return true;
 		}
 		$genCodeAlg = substr(str_shuffle(str_repeat("QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890", 9)), 0, 9);
-		
+		$allCodes = $this->plugin->codes->get("codes", []);
+		$newCodeToArray = array($code);
+		$codeArray = array_merge($newCodeToArray, $allCodes);
+		$this->plugin->codes->set("codes", $codeArray);
+		$this->plugin->codes->save();
+		$sender->sendMessage(TextFormat::GREEN . "The giftcode " . $code . " has been generated!");
 	}
 }

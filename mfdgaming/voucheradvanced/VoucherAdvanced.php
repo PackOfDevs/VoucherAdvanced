@@ -2,7 +2,11 @@
 
 namespace mfdgaming\voucheradvanced;
 
+use mfdgaming\voucheradvanced\command\GenerateCodeCommand;
+use mfdgaming\voucheradvanced\command\RedeemCommand;
 use pocketmine\plugin\PluginBase;
+use pocketmine\utils\Config;
+use pocketmine\utils\TextFormat;
 
 class VoucherAdvanced extends PluginBase {
 	public $prefix = "> ";

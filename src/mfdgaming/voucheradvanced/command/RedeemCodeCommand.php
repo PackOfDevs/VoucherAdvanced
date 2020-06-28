@@ -28,6 +28,7 @@ class RedeemCodeCommand extends PluginCommand {
 					$codes = array_values($codes);
 					$this->plugin->codes->set("codes", $codes);
 					$this->plugin->codes->save();
+					$this->plugin->economy->addMoney($sender, 100);
 					$sender->sendMessage(TextFormat::GREEN . "Successfully redeemed the redeemcode " . $code);
 					return true;
 				} else {

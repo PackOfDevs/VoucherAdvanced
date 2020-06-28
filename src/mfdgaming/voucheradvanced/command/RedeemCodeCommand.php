@@ -13,6 +13,8 @@ class RedeemCodeCommand extends PluginCommand {
 	public function __construct(Main $owner) {
 		parent::__construct("redeemcode", $owner);
 		$this->setDescription("Redeem Code Command");
+		$this->setAliases(["redeem"]);
+		$this->setPermission("use.voucheradvanced.redeemcode");
 		$this->plugin = $owner;
 	}
 	public function execute(CommandSender $sender, $currentAlias, array $args) {

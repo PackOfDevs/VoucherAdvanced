@@ -22,7 +22,7 @@ class GenerateCodeCommand extends PluginCommand {
 			$sender->sendMessage(TextFormat::RED . "You dont have the permition to execute this command");
 			return true;
 		}
-		$genCodeAlg = substr(str_shuffle(str_repeat("QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890", 9)), 0, 9);
+		$code = substr(str_shuffle(str_repeat("QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890", 9)), 0, 9);
 		$allCodes = $this->plugin->codes->get("codes", []);
 		$newCodeToArray = array($code);
 		$codeArray = array_merge($newCodeToArray, $allCodes);

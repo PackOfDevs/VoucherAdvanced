@@ -2,7 +2,9 @@
 	<h2>VoucherAdvanced</h2>
 </div>
 
-- VoucherAdvanced is a fully functional voucher plugin for PocketMine-MP
+<div align="center">
+	<p>VoucherAdvanced is a fully functional voucher plugin for PocketMine-MP</p>
+</div>
 
 <div align="center">
 	<h2>Installation & Info</h2>

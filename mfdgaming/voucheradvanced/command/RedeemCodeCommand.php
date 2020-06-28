@@ -9,7 +9,7 @@ use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\utils\TextFormat;
 
-class GenerateCodeCommand extends PluginCommand {
+class RedeemCodeCommand extends PluginCommand {
 	public function __construct(Main $owner) {
 		parent::__construct("redeemcode", $owner);
 		$this->setDescription("Redeem Code Command");

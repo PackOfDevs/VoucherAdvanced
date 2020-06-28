@@ -28,7 +28,7 @@ class RedeemCodeCommand extends PluginCommand {
 					$codes = array_values($codes);
 					$this->plugin->codes->set("codes", $codes);
 					$this->plugin->codes->save();
-					$money = $this->plugin->getConfig()->get("money-to-gain");
+					$money = $this->plugin->getConfig()->get("money-amount-to-gain");
 					$this->plugin->economy->addMoney($sender, $money);
 					$sender->sendMessage(TextFormat::GREEN . "Successfully redeemed the redeemcode " . $code);
 					return true;

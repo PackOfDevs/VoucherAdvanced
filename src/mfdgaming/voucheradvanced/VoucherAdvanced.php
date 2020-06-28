@@ -22,6 +22,10 @@ class VoucherAdvanced extends PluginBase {
 		$this->codes = new Config($dataFolder.'codes.yml', Config::YAML);
 		$this->economy = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
 		$this->registerCommands();
+		if($this->economy == null) {
+			$this->getLogger->alert($prefix . "EconomyAPI not out! Disabling...");
+			$this->getPluginLoader()->disablePlugin($this);
+		}
 	}
 	
 	public function registerCommands() {

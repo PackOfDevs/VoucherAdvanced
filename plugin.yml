@@ -1,0 +1,6 @@
+name: VoucherAdvanced
+description: A voucher plugin for pocketmine
+version: 1.0.0
+author: MFDGaming
+api: [3.0.0, 4.0.0]
+main: mfdgaming\voucheradvanced\VoucherAdvanced

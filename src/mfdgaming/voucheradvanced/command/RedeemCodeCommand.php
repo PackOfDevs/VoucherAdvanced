@@ -36,6 +36,7 @@ class RedeemCodeCommand extends PluginCommand {
 					$sender->sendMessage(TextFormat::RED . "Invalid redeemcode!");
 					return true;
 				}
+			}
 		} else {
 			$sender->sendMessage(TextFormat::RED . "You cant execute this command as a console!");
 			return true;

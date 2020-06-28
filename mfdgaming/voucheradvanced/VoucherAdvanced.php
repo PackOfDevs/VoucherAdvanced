@@ -3,7 +3,7 @@
 namespace mfdgaming\voucheradvanced;
 
 use mfdgaming\voucheradvanced\command\GenerateCodeCommand;
-use mfdgaming\voucheradvanced\command\RedeemCommand;
+use mfdgaming\voucheradvanced\command\RedeemCodeCommand;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
@@ -24,7 +24,7 @@ class VoucherAdvanced extends PluginBase {
 	}
 	
 	public function registerCommands() {
-		$commands = [new GenerateCodeCommand($this), new RedeemCommand($this)];
+		$commands = [new GenerateCodeCommand($this), new RedeemCodeCommand($this)];
 		foreach($commands as $command) {
 			$this->getServer()->getCommandMap()->register("command", $command);
 		}

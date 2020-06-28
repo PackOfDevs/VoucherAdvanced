@@ -29,5 +29,6 @@ class GenerateCodeCommand extends PluginCommand {
 		$this->plugin->codes->set("codes", $codeArray);
 		$this->plugin->codes->save();
 		$sender->sendMessage(TextFormat::GREEN . "The giftcode " . $code . " has been generated!");
+		return true;
 	}
 }

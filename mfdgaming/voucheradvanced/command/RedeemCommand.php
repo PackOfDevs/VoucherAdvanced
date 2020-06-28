@@ -11,23 +11,13 @@ use pocketmine\utils\TextFormat;
 
 class GenerateCodeCommand extends PluginCommand {
 	public function __construct(Main $owner) {
-		parent::__construct("generatecode", $owner);
-		$this->setDescription("Generate Code Command");
-		$this->setAliases(["gencode"]);
-		$this->setPermission("use.voucheradvanced.generatecode");
+		parent::__construct("redeemcode", $owner);
+		$this->setDescription("Redeem Code Command");
 		$this->plugin = $owner;
 	}
 	public function execute(CommandSender $sender, $currentAlias, array $args) {
-		if(!$this->testPermission($sender)){
-			$sender->sendMessage(TextFormat::RED . "You dont have the permition to execute this command");
-			return true;
-		}
-		$genCodeAlg = substr(str_shuffle(str_repeat("QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890", 9)), 0, 9);
-		$allCodes = $this->plugin->codes->get("codes", []);
-		$newCodeToArray = array($code);
-		$codeArray = array_merge($newCodeToArray, $allCodes);
-		$this->plugin->codes->set("codes", $codeArray);
-		$this->plugin->codes->save();
-		$sender->sendMessage(TextFormat::GREEN . "The giftcode " . $code . " has been generated!");
+		if($sender instanceof Player) {
+			return;
+		} else {
 	}
-}RedeemCommand
+}

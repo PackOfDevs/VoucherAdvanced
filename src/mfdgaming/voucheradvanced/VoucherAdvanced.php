@@ -20,6 +20,7 @@ class VoucherAdvanced extends PluginBase {
 		$this->saveDefaultConfig();
 		$this->config = (new Config($folder.'config.yml', Config::YAML))->getAll();
 		$this->codes = new Config($folder.'codes.yml', Config::YAML);
+		$this->economy = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
 		$this->registerCommands();
 	}
 	

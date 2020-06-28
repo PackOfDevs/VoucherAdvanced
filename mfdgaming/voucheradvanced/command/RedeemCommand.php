@@ -17,7 +17,20 @@ class GenerateCodeCommand extends PluginCommand {
 	}
 	public function execute(CommandSender $sender, $currentAlias, array $args) {
 		if($sender instanceof Player) {
-			return;
+			if (!isset($args[0])) {
+				$sender->sendMessage(TextFormat::GOLD . "/redeemcode <code>");
+			} else {
+				$codes = $this->plugin->codes->get("codes", []);
+				$code = $args[0];
+				$id = array_search($code, $codes);
+				if(array_key_exists("$id", $codes)) {
+					unset($codes[$id]);
+					$codes = array_values($codes);
+					$this->plugin->codes->set("codes", $codes);
+					$this->plugin->codes->save();
 		} else {
+			$sender->sendMessage(TextFormat::RED . "You cant execute this command as a console");
+			return true;
+		}
 	}
 }

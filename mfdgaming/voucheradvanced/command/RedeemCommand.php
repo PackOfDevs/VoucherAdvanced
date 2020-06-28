@@ -28,8 +28,14 @@ class GenerateCodeCommand extends PluginCommand {
 					$codes = array_values($codes);
 					$this->plugin->codes->set("codes", $codes);
 					$this->plugin->codes->save();
+					$sender->sendMessage(TextFormat::GREEN . "Successfully redeemed the redeemcode " . $code);
+					return true;
+				} else {
+					$sender->sendMessage(TextFormat::RED . "Invalid redeemcode!");
+					return true;
+				}
 		} else {
-			$sender->sendMessage(TextFormat::RED . "You cant execute this command as a console");
+			$sender->sendMessage(TextFormat::RED . "You cant execute this command as a console!");
 			return true;
 		}
 	}

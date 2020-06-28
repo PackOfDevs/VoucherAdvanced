@@ -23,7 +23,7 @@ class VoucherAdvanced extends PluginBase {
 		$this->economy = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
 		$this->registerCommands();
 		if($this->economy == null) {
-			$this->getLogger->alert($prefix . "EconomyAPI not out! Disabling...");
+			$this->getLogger()->alert($prefix . "EconomyAPI not out! Disabling...");
 			$this->getPluginLoader()->disablePlugin($this);
 		}
 	}

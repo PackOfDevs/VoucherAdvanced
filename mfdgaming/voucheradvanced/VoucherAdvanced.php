@@ -13,9 +13,13 @@ class VoucherAdvanced extends PluginBase {
 
 	public function onEnable() {
 		$this->getLogger()->info($this->prefix . "Enabled!");
-		if(!is_dir($folder)) {
-			@mkdir($folder);
+		$dataFolder = $this->getDataFolder();
+		if(!is_dir($dataFolder)) {
+			@mkdir($dataFolder);
 		}
+		$this->saveDefaultConfig();
+		$this->config = (new Config($folder.'config.yml', Config::YAML))->getAll();
+		$this->codes = new Config($folder.'codes.yml', Config::YAML);
 		$this->registerCommands();
 	}
 	

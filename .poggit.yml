@@ -1,0 +1,8 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/PackOfDevs/VoucherAdvanced
+build-by-default: true
+branches:
+- master
+projects:
+  VoucherAdvanced:
+    path: ""
+...

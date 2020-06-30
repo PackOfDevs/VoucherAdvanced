@@ -33,9 +33,11 @@ class RedeemCodeCommand extends PluginCommand {
 					$this->plugin->codes->save();
 					$money = $this->plugin->getConfig()->get("money-amount-to-gain");
 					$this->plugin->economy->addMoney($sender, $money);
+					$cmd = $this->plugin->getConfig()->get("command-after-redeem");
 					if($this->plugin->getConfig()->get("command-as-console") == "true") {
-						$cmd = $this->plugin->getConfig()->get("command-after-redeem");
 						$this->plugin->getServer()->dispatchCommand(new ConsoleCommandSender(), $cmd);
+					} else {
+						continue;
 					}
 					$sender->sendMessage(TextFormat::GREEN . "Successfully redeemed the redeemcode " . $code);
 					return true;

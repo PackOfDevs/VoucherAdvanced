@@ -1,2 +1,4 @@
 generated-code-length: 9
 money-amount-to-gain: 4
+command-after-redeem: say Please change the default command
+command-as-console: true

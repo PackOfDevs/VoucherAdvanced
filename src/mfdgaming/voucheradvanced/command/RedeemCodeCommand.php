@@ -37,7 +37,7 @@ class RedeemCodeCommand extends PluginCommand {
 					if($this->plugin->getConfig()->get("command-as-console") == "true") {
 						$this->plugin->getServer()->dispatchCommand(new ConsoleCommandSender(), $cmd);
 					} else {
-						//empty for now
+						$this->plugin->getServer()->dispatchCommand($sender, $cmd);
 					}
 					$sender->sendMessage(TextFormat::GREEN . "Successfully redeemed the redeemcode " . $code);
 					return true;

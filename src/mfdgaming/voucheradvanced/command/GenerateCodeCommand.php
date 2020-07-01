@@ -19,7 +19,7 @@ class GenerateCodeCommand extends PluginCommand {
 	}
 	public function execute(CommandSender $sender, $currentAlias, array $args) {
 		if(!$this->testPermission($sender)){
-			$sender->sendMessage(TextFormat::RED . "You dont have the permition to execute this command");
+			$sender->sendMessage(TextFormat::RED . "You dont have the permission to execute this command");
 			return true;
 		}
 		$codeLength = $this->plugin->getConfig()->get("generated-code-length");
